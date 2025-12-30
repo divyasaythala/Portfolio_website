@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Divyasri Saythala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1a0000, #050505);
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    /* Floating particles */
+    .particles span {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: rgba(3, 3, 3, 0.15);
+      border-radius: 50%;
+      animation: float 15s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh) scale(0); }
+      to { transform: translateY(-10vh) scale(1); }
+    }
+
+    header {
+      background: rgba(165, 10, 10, 0.9);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: #ffd6d6;
+      transition: width 0.3s;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card {
+      background: rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 60px 50px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      animation: fadeIn 1.5s ease-in-out;
+      max-width: 700px;
+    }
+
+    .hero-card h1 {
+      font-size: 50px;
+      color: #ffb3b3;
+      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .typing {
+      font-size: 22px;
+      height: 30px;
+      margin-bottom: 35px;
+      color: #f0f0f0;
+    }
+
+    .hero-card a {
+      display: inline-block;
+      background: linear-gradient(135deg, #a50a0a, #ff4d4d);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 10px 25px rgba(165,10,10,0.4);
+    }
+
+    .hero-card a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(255,77,77,0.6);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating background particles -->
+  <div class="particles">
+    <span style="left:10%; animation-delay:0s;"></span>
+    <span style="left:25%; animation-delay:2s;"></span>
+    <span style="left:40%; animation-delay:4s;"></span>
+    <span style="left:55%; animation-delay:1s;"></span>
+    <span style="left:70%; animation-delay:3s;"></span>
+    <span style="left:85%; animation-delay:5s;"></span>
+  </div>
+
+  <header>
+    <h3>Divyasri Saythala</h3>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="profiles.html">Profiles</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-card">
+      <h1>Hello, I’m Divyasri</h1>
+      <div class="typing" id="typing"></div>
+      <a href="divyasrisaythala_resume.pdf">Download Resume</a>
+    </div>
+  </section>
+
+  <script>
+    const roles = [
+      "AI & Web3 Enthusiast",
+      "Problem Solver",
+      "Future Engineer",
+      "Building Meaningful Tech ✨"
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    const typingElement = document.getElementById("typing");
+
+    function typeEffect() {
+      if (charIndex < roles[index].length) {
+        typingElement.textContent += roles[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 80);
+      } else {
+        setTimeout(eraseEffect, 1500);
+      }
+    }
+
+    function eraseEffect() {
+      if (charIndex > 0) {
+        typingElement.textContent = roles[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseEffect, 50);
+      } else {
+        index = (index + 1) % roles.length;
+        setTimeout(typeEffect, 300);
+      }
+    }
+
+    typeEffect();
+  </script>
+
+</body>
+</html>

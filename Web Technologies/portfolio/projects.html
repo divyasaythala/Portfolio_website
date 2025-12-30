@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #000000);
+      color: #333;
+    }
+
+    header {
+      background-color: #a50a0a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-direction: column;   /* vertical stack */
+      align-items: center;      /* center cards */
+      gap: 30px;                /* spacing between cards */
+      padding: 40px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 20px;      /* rounded corners */
+      width: 350px;             /* fixed width for neat square-ish look */
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h2 {
+      margin: 0;
+      color: #a50a0a;
+      font-size: 18px;
+    }
+
+    .project-card p {
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 10px 0;
+    }
+
+    .tech-stack {
+      margin-bottom: 10px;
+    }
+
+    .tech-stack span {
+      display: inline-block;
+      background: #f0d9d9;
+      color: #a50a0a;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .tech-stack span:hover {
+      background: #a50a0a;
+      color: white;
+    }
+
+    .project-btn {
+      display: inline-block;
+      background-color: #a50a0a;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+      align-self: flex-start;
+    }
+
+    .project-btn:hover {
+      background-color: #880808;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>My Projects</header>
+  <div class="projects-container">
+    <div class="project-card">
+      <img src="portfolio.png" alt="Portfolio Website">
+      <div class="project-content">
+        <h2>Personal Portfolio Website</h2>
+        <p>A responsive portfolio showcasing my skills, projects, and contact info.</p>
+        <div class="tech-stack">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <a href="#" class="project-btn">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="Dapp.png" alt="Decentralized To-Do DApp">
+      <div class="project-content">
+        <h2>Decentralized To-Do List DApp</h2>
+        <p>Blockchain-based task manager using Solidity with wallet integration.</p>
+        <div class="tech-stack">
+          <span>Solidity</span><span>Web3</span><span>Ethereum</span>
+        </div>
+        <a href="#" class="project-btn">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="mental.webp" alt="Mental Health AI Assistant">
+      <div class="project-content">
+        <h2>Mental Health AI Assistant</h2>
+        <p>AI-powered wellness platform with mood tracking and chatbot support.</p>
+        <div class="tech-stack">
+          <span>Python</span><span>TensorFlow</span><span>AI</span>
+        </div>
+        <a href="#" class="project-btn">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="HIMS.webp" alt="Hospital Management System">
+      <div class="project-content">
+        <h2>Hospital Management System</h2>
+        <p>CRUD-based system for managing patients, doctors, and appointments.</p>
+        <div class="tech-stack">
+          <span>Java</span><span>JDBC</span><span>MySQL</span>
+        </div>
+        <a href="#" class="project-btn">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="yoga.jpg" alt="Yoga Organization Website">
+      <div class="project-content">
+        <h2>Yoga Organization Website</h2>
+        <p>Responsive site for Patanjali Yoga Organization with trainer profiles.</p>
+        <div class="tech-stack">
+          <span>HTML</span><span>CSS</span><span>Responsive Design</span>
+        </div>
+        <a href="#" class="project-btn">View Project</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

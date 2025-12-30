@@ -1,0 +1,34 @@
+ .main-header {
+    display: flex;
+    justify-content: space-between; /* Pushes the logo to the far left and nav to the far right */
+    align-items: center; /* Vertically centers items in the middle */
+    padding: 10px 20px;
+    background-color: #a50a0a;
+}
+.main-nav ul {
+    display: flex;
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: white; /* Adds space between the links */
+}
+.main-nav li a:hover {
+    color: rgb(234, 176, 145);
+}
+#name{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  font-weight: 900;
+  color: #b32020; /* deep red like image */
+}
+
+ 
